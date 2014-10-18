@@ -9,7 +9,10 @@ app.CreateStory = (function () {
 
     var createStoryViewModel = (function () {
 
-        var $newStatus;
+        var $storyName;
+        var $storyStatus;
+        var $storyStatusButtons;
+        var $helpStoryStatus;
         var validator;
 
         var init = function () {
@@ -19,14 +22,26 @@ app.CreateStory = (function () {
                 app.helper.reload();
             }
 
-            validator = $('#enterStatus').kendoValidator().data("kendoValidator");
-            $newStatus = $('#newStatus');
+            validator = $('#enterStory').kendoValidator().data("kendoValidator");
+            $storyName = $('#storyName');
+            $storyStatus = $('#storyStatus');
+            $storyStatusButtons = $("#select-story-status").kendoMobileButtonGroup({
+                select: function(e, data) {
+                    $storyStatus.val(app.Stories.storyType[this.current().index()]);                     
+                },
+                index: 0
+            });
+            $helpStoryStatus = $('#helpStoryStatus')
+                .bind('click', function() {
+                    app.mobileApp.navigate('views/storyStatusHelpView.html');
+                });
         };
 
         var show = function () {
 
             // Clear field on view show
-            $newStatus.val('');
+            $storyName.val('');
+            $storyStatus.val('');
             validator.hideMessages();
         };
 
@@ -39,11 +54,12 @@ app.CreateStory = (function () {
                 var stories = app.Stories.stories;
                 var story = stories.add();
 
-                story.Text = $newStatus.val();
-                story.UserId = app.Users.currentUser.get('data').Id;
+                story.name = $storyName.val();
+                story.status = $storyStatus.val();
+                //story.UserId = app.Users.currentUser.get('data').Id;
 
                 stories.one('sync', function () {
-                    app.mobileApp.navigate('#:back');
+                    app.mobileApp.navigate('views/postsView.html?story_id=' + story.Id);
                 });
 
                 stories.sync();

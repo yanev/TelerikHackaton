@@ -7,13 +7,17 @@
             <a class="nav-button nav-button-post" data-align="right" data-role="button" data-bind="click: saveStory">Post</a>
         </div>
     </header>
-    <div id="enterStatus" class="share-form-wrp" data-role="listview" data-style="inset">
-        <div class="user-avatar">
-            <img data-bind="attr:{src: me.get('data').PictureUrl}" alt="styles/images/avatar.png" />
+    <div id="enterStory" class="share-form-wrp" data-role="listview" data-style="inset">
+        <div class="story-name">
+            <textarea id="storyName" placeholder="What's on your mind?" required validationMessage="Story title is required!"></textarea>
         </div>
-        <h2 class="person-name" data-bind="text: me.get('data').DisplayName">Me</h2>
-        <div class="user-share">
-            <textarea id="newStatus" placeholder="What's on your mind?" required validationMessage="Comment text is required!"></textarea>
+        <div class="story-status">
+            <ul id="select-story-status" data-role="buttongroup">
+                <li>Open story</li>
+                <li>Closed story</li>
+            </ul>
+            <input id="storyStatus" type="hidden" />
+            <p id="helpStoryStatus" class="centered-text">What is the difference?</p>
         </div>
     </div>
 </div>
