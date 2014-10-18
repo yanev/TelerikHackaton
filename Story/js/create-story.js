@@ -43,7 +43,7 @@ app.CreateStory = (function () {
                 story.UserId = app.Users.currentUser.get('data').Id;
 
                 stories.one('sync', function () {
-                    app.mobileApp.navigate('views/createPostView.html?story_id=' + story.Id);
+                    app.mobileApp.navigate('views/postsView.html?story_id=' + story.Id);
                 });
 
                 stories.sync();
