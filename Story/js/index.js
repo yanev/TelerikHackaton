@@ -72,12 +72,13 @@ var app = {
         return this.el;
     },
     helper: function() {
+        var self = this;
         return {
 
             // Return user profile picture url
             resolveProfilePictureUrl: function (id) {
-                if (id && id !== emptyGuid) {
-                    return this.everlive().Files.getDownloadUrl(id);
+                if (id && id !== self.emptyGuid) {
+                    return self.everlive().Files.getDownloadUrl(id);
                 } else {
                     return '/images/avatar.png';
                 }
@@ -85,8 +86,8 @@ var app = {
 
             // Return current activity picture url
             resolvePictureUrl: function (id) {
-                if (id && id !== emptyGuid) {
-                    return this.everlive().Files.getDownloadUrl(id);
+                if (id && id !== self.emptyGuid) {
+                    return self.everlive().Files.getDownloadUrl(id);
                 } else {
                     return '';
                 }
@@ -111,10 +112,7 @@ var app = {
 
             // Current user logout
             logout: function () {
-                if (analytics.isAnalytics()) {
-                    analytics.Stop();
-                }
-                return this.everlive().Users.logout();
+                return self.everlive().Users.logout();
             },
 
             reload: function () {

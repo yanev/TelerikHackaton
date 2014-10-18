@@ -1,0 +1,31 @@
+<div data-role="view" id="view-all-posts" data-layout="default" class="posts-view" data-model="app.Posts" data-init="app.Posts.init">
+    <header data-role="header">
+        <div data-role="navbar">
+            Content
+            <a class="nav-button nav-button-back hide-text" data-align="left" data-role="backbutton">Back</a>
+            <a class="nav-button nav-button-next" data-align="right" data-role="button" href="views/publishStoryView.html">Next</a>
+        </div>
+    </header>
+
+    <ul id="posts-listview"></ul>
+    <p id="no-posts" hidden="hidden" class="no-items-msg">
+        <a class="btn btn-circle" data-align="right" data-role="button" href="views/createPostView.html">Add content</a>
+    </p>
+</div>
+
+<!-- Posts ListView Template -->
+<script type="text/x-kendo-template" id="postTemplate">
+    <div class="cf">
+        <div class="post-action-hide">hide</div>
+        <div class="post-content">
+            <p class="user-share-txt">${text}</p>
+
+            #if(ImageUrl)
+            {#
+            <img data-bind="attr:{src: ImageUrl}" alt="images/empty_post_image.png" />
+            # }#
+            <h2 class="pull-right person-name">${User().DisplayName}</h2>
+            <time class="time-span pull-left">${CreatedAtFormatted()}</time>
+        </div>
+    </div>
+</script>

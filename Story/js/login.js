@@ -16,7 +16,6 @@ app.Login = (function () {
         var isFacebookLogin = app.isKeySet(appSettings.facebook.appId) && app.isKeySet(appSettings.facebook.redirectUri);
 
         var init = function () {
-
             if (!app.isKeySet(appSettings.everlive.apiKey)) {
                 app.mobileApp.navigate('views/noApiKey.html', 'fade');
             }
@@ -53,7 +52,7 @@ app.Login = (function () {
                 return app.Users.load();
             })
             .then(function () {
-                app.mobileApp.navigate('views/createStoryView.html');
+                app.mobileApp.navigate('views/postsView.html?story_id=1');
             })
             .then(null,
                   function (err) {
