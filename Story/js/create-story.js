@@ -39,11 +39,11 @@ app.CreateStory = (function () {
                 var stories = app.Stories.stories;
                 var story = stories.add();
 
-                story.Text = $newStatus.val();
+                story.name = $newStatus.val();
                 story.UserId = app.Users.currentUser.get('data').Id;
 
                 stories.one('sync', function () {
-                    app.mobileApp.navigate('#:back');
+                    app.mobileApp.navigate('views/createPostView.html?story_id=' + story.Id);
                 });
 
                 stories.sync();
