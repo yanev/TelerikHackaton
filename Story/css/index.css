@@ -170,7 +170,7 @@ h1 {
   overflow: hidden;
   margin: 0 auto;
   border: 0 none;
-  width: 600px;
+  max-width: 600px;
   background-color: #2d3e50;
   color: #fff;
   font-family: "Open Sans", sans-serif;
