@@ -85,7 +85,8 @@ app.Stories = (function () {
         });
 
         return {
-            stories: storiesDataSource
+            stories: storiesDataSource,
+            storyType: ['public', 'private']
         };
 
     }());
@@ -125,7 +126,8 @@ app.Stories = (function () {
             init: init,
             stories: storiesModel.stories,
             storySelected: storySelected,
-            logout: logout
+            logout: logout,
+            storyType: storiesModel.storyType
         };
 
     }());

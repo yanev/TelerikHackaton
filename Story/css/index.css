@@ -673,7 +673,7 @@ h1 {
   color: #34495e;
 }
 
-#storyApp .activity-content .comment-content .user-share-txt {
+#storyApp .activity-content .comment-content .story-name-txt {
   font-size: .75rem;
 }
 
@@ -697,19 +697,19 @@ h1 {
   margin: 1em 0 0;
 }
 
-#storyApp .user-share {
+#storyApp .story-name {
   position: relative;
   margin: 2.35em 0 0;
 }
 
-#storyApp .user-share:before {
+#storyApp .story-name:before {
   position: absolute;
   width: 0;
   height: 0;
   content: '';
 }
 
-#storyApp .user-share:before {
+#storyApp .story-name:before {
   top: -10px;
   left: 16px;
   border-right: 9px solid transparent;
@@ -717,7 +717,7 @@ h1 {
   border-left: 9px solid transparent;
 }
 
-#storyApp .user-share textarea {
+#storyApp .story-name textarea {
   float: none;
   margin: 0;
   padding: .75em 1em;
