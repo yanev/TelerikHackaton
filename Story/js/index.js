@@ -46,5 +46,68 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+
+    service: function() {
+        var el = el || new Everlive({
+            apiKey: appSettings.everlive.apiKey,
+            scheme: appSettings.everlive.scheme
+        });
+
+        return el;
+    },
+    helper: function() {
+        return {
+
+            // Return user profile picture url
+            resolveProfilePictureUrl: function (id) {
+                if (id && id !== emptyGuid) {
+                    return el.Files.getDownloadUrl(id);
+                } else {
+                    return '/images/avatar.png';
+                }
+            },
+
+            // Return current activity picture url
+            resolvePictureUrl: function (id) {
+                if (id && id !== emptyGuid) {
+                    return el.Files.getDownloadUrl(id);
+                } else {
+                    return '';
+                }
+            },
+
+            // Date formatter. Return date in d.m.yyyy format
+            formatDate: function (dateString) {
+
+                var months = [
+                    'Jan', 'Feb', 'Mar',
+                    'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep',
+                    'Oct', 'Nov', 'Dec'
+                ];
+                var date = new Date(dateString);
+                var year = date.getFullYear();
+                var month = months[ date.getMonth() ];
+                var day = date.getDate();
+
+                return month + ' ' + day + ', ' + year;
+            },
+
+            // Current user logout
+            logout: function () {
+                if (analytics.isAnalytics()) {
+                    analytics.Stop();
+                }
+                return el.Users.logout();
+            },
+
+            reload: function () {
+                if (!window.location.origin) {
+                  window.location.origin = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+                }
+                window.location.replace(window.location.origin);
+            }
+        };
     }
 };
