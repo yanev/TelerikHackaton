@@ -19,13 +19,14 @@
 var app = {
     emptyGuid: '00000000-0000-0000-0000-000000000000',
     el: '',
+    mobileApp: '',
 
     // Application Constructor
     initialize: function() {
         this.bindEvents();
 
         // Initialize KendoUI mobile application
-        var mobileApp = new kendo.mobile.Application(document.body, {
+        this.mobileApp = new kendo.mobile.Application(document.body, {
             transition: 'slide',
             layout: 'mobile-tabstrip',
             skin: 'flat'

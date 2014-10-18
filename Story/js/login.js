@@ -53,7 +53,7 @@ app.Login = (function () {
                 return app.Users.load();
             })
             .then(function () {
-                app.mobileApp.navigate('views/activitiesView.html');
+                app.mobileApp.navigate('views/createStoryView.html');
             })
             .then(null,
                   function (err) {
@@ -86,7 +86,7 @@ app.Login = (function () {
                     })
                     .then(function () {
                         app.mobileApp.hideLoading();
-                        app.mobileApp.navigate('views/activitiesView.html');
+                        app.mobileApp.navigate('views/createStoryView.html');
                     })
                     .then(null, function (err) {
                         app.mobileApp.hideLoading();
