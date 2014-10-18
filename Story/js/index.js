@@ -17,9 +17,17 @@
  * under the License.
  */
 var app = {
+    emptyGuid: '00000000-0000-0000-0000-000000000000',
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+
+        // Initialize KendoUI mobile application
+        var mobileApp = new kendo.mobile.Application(document.body, {
+            transition: 'slide',
+            layout: 'mobile-tabstrip',
+            skin: 'flat'
+        });
     },
     // Bind Event Listeners
     //
@@ -48,7 +56,7 @@ var app = {
         console.log('Received Event: ' + id);
     },
 
-    service: function() {
+    everlive: function() {
         var el = el || new Everlive({
             apiKey: appSettings.everlive.apiKey,
             scheme: appSettings.everlive.scheme
@@ -62,7 +70,7 @@ var app = {
             // Return user profile picture url
             resolveProfilePictureUrl: function (id) {
                 if (id && id !== emptyGuid) {
-                    return el.Files.getDownloadUrl(id);
+                    return this.everlive().Files.getDownloadUrl(id);
                 } else {
                     return '/images/avatar.png';
                 }
@@ -71,7 +79,7 @@ var app = {
             // Return current activity picture url
             resolvePictureUrl: function (id) {
                 if (id && id !== emptyGuid) {
-                    return el.Files.getDownloadUrl(id);
+                    return this.everlive().Files.getDownloadUrl(id);
                 } else {
                     return '';
                 }
@@ -99,7 +107,7 @@ var app = {
                 if (analytics.isAnalytics()) {
                     analytics.Stop();
                 }
-                return el.Users.logout();
+                return this.everlive().Users.logout();
             },
 
             reload: function () {
@@ -109,5 +117,25 @@ var app = {
                 window.location.replace(window.location.origin);
             }
         };
+    },
+    showAlert: function(message) {
+        alert(message);
+    },
+
+    showError: function(message) {
+        showAlert(message);
+    },
+
+    isNullOrEmpty: function (value) {
+        return typeof value === 'undefined' || value === null || value === '';
+    },
+
+    isKeySet: function (key) {
+        var regEx = /^\$[A-Z_]+\$$/;
+        return !this.isNullOrEmpty(key) && !regEx.test(key);
+    },
+    getYear: function () {
+        var currentTime = new Date();
+        return currentTime.getFullYear();
     }
 };
