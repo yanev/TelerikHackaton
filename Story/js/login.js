@@ -31,8 +31,8 @@ app.Login = (function () {
         };
 
         var show = function () {
-            $loginUsername.val('');
-            $loginPassword.val('');
+            $loginUsername.val('test');
+            $loginPassword.val('1234');
         };
 
         var getYear = function () {
