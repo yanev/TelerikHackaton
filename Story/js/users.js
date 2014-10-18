@@ -16,7 +16,7 @@ app.Users = (function () {
         var loadUsers = function () {
 
             // Get the data about the currently logged in user
-            return app.everlive.Users.currentUser()
+            return app.everlive().Users.currentUser()
             .then(function (data) {
 
                 var currentUserData = data.result;
@@ -24,7 +24,7 @@ app.Users = (function () {
                 currentUser.set('data', currentUserData);
 
                 // Get the data about all registered users
-                return app.everlive.Users.get();
+                return app.everlive().Users.get();
             })
             .then(function (data) {
 

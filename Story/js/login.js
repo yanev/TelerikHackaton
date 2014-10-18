@@ -50,15 +50,9 @@ app.Login = (function () {
             app.everlive().Users.login(username, password)
             .then(function () {
                 // EQATEC analytics monitor - track login type
-                if (isAnalytics) {
-                    analytics.Start();
-                    analytics.TrackFeature('Login.Regular');
-                }
-
                 return app.Users.load();
             })
             .then(function () {
-
                 app.mobileApp.navigate('views/activitiesView.html');
             })
             .then(null,
@@ -81,7 +75,7 @@ app.Login = (function () {
 
             facebook.getAccessToken(function(token) {
                 if (token) {
-                    app.everlive.Users.loginWithFacebook(token)
+                    app.everlive().Users.loginWithFacebook(token)
                     .then(function () {
                         // EQATEC analytics monitor - track login type
                         if (isAnalytics) {

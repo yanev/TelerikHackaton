@@ -18,6 +18,8 @@
  */
 var app = {
     emptyGuid: '00000000-0000-0000-0000-000000000000',
+    el: '',
+
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -28,6 +30,8 @@ var app = {
             layout: 'mobile-tabstrip',
             skin: 'flat'
         });
+
+        this.everlive();
     },
     // Bind Event Listeners
     //
@@ -57,12 +61,14 @@ var app = {
     },
 
     everlive: function() {
-        var el = el || new Everlive({
-            apiKey: appSettings.everlive.apiKey,
-            scheme: appSettings.everlive.scheme
-        });
+        if (this.el === '') {
+            this.el = new Everlive({
+                apiKey: appSettings.everlive.apiKey,
+                scheme: appSettings.everlive.scheme
+            });
+        }
 
-        return el;
+        return this.el;
     },
     helper: function() {
         return {
