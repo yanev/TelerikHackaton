@@ -12,6 +12,7 @@ app.CreateStory = (function () {
         var $storyName;
         var $storyStatus;
         var $storyStatusButtons;
+        var $helpStoryStatus;
         var validator;
 
         var init = function () {
@@ -26,11 +27,14 @@ app.CreateStory = (function () {
             $storyStatus = $('#storyStatus');
             $storyStatusButtons = $("#select-story-status").kendoMobileButtonGroup({
                 select: function(e, data) {
-                  console.log("KOR", app, app.Stories, app.Stories.storyType);
                     $storyStatus.val(app.Stories.storyType[this.current().index()]);                     
                 },
                 index: 0
             });
+            $helpStoryStatus = $('#helpStoryStatus')
+                .bind('click', function() {
+                    app.mobileApp.navigate('views/storyStatusHelpView.html');
+                });
         };
 
         var show = function () {
