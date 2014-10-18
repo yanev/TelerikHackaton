@@ -7,7 +7,8 @@
         </div>
     </header>
 
-    <ul id="posts-listview"></ul>
+    <ul id="posts-listview" data-style="inset" data-role="listview" data-template="postTemplate"
+        data-bind="source: posts"></ul>
     <p id="no-posts" hidden="hidden" class="no-items-msg">
         <a class="btn btn-circle" data-align="right" data-role="button" href="views/createPostView.html">Add content</a>
     </p>
@@ -20,10 +21,8 @@
         <div class="post-content">
             <p class="user-share-txt">${text}</p>
 
-            #if(ImageUrl)
-            {#
-            <img data-bind="attr:{src: ImageUrl}" alt="images/empty_post_image.png" />
-            # }#
+            <img data-bind="attr:{src: ImageUrl()}" alt="images/empty_post_image.png" />
+
             <h2 class="pull-right person-name">${User().DisplayName}</h2>
             <time class="time-span pull-left">${CreatedAtFormatted()}</time>
         </div>

@@ -52,7 +52,7 @@ app.Login = (function () {
                 return app.Users.load();
             })
             .then(function () {
-                app.mobileApp.navigate('views/postsView.html?story_id=1');
+                app.mobileApp.navigate('views/createStoryView.html');
             })
             .then(null,
                   function (err) {

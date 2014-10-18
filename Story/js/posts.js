@@ -8,82 +8,82 @@ app.Posts = (function () {
     'use strict'
 
 
-    var postModel = {
-
-        id: 'Id',
-        fields: {
-            text: {
-                field: 'text',
-                defaultValue: ''
-            },
-            CreatedAt: {
-                field: 'CreatedAt',
-                defaultValue: new Date()
-            },
-            image: {
-                fields: 'image',
-                defaultValue: null
-            },
-            is_hidden: {
-                fields: 'is_hidden',
-                defaultValue: null
-            },
-            position: {
-                fields: 'position',
-                defaultValue: null
-            },
-            status: {
-                fields: 'status',
-                defaultValue: null
-            },
-            story: {
-                fields: 'story',
-                defaultValue: null
-            },
-            story_id: {
-                fields: 'story_id',
-                defaultValue: null
-            },
-            UserId: {
-                field: 'UserId',
-                defaultValue: null
-            },
-        },
-        CreatedAtFormatted: function () {
-
-            return app.helper().formatDate(this.get('CreatedAt'));
-        },
-        ImageUrl: function () {
-
-            return app.helper().resolvePictureUrl(this.get('image'));
-        },
-        User: function () {
-
-            var userId = this.get('UserId');
-
-            var user = $.grep(app.Users.users(), function (e) {
-                return e.Id === userId;
-            })[0];
-
-            return user ? {
-                DisplayName: user.DisplayName,
-                PictureUrl: app.helper().resolveProfilePictureUrl(user.Picture)
-            } : {
-                DisplayName: 'Anonymous',
-                PictureUrl: app.helper().resolveProfilePictureUrl()
-            };
-        },
-        isVisible: function () {
-            var currentUserId = app.Users.currentUser.data.Id;
-            var userId = this.get('UserId');
-
-            return currentUserId === userId;
-        }
-    };
-
     // e.view.params.story_id
     // Posts model
     var postsModel = (function () {
+
+        var postModel = {
+
+            id: 'Id',
+            fields: {
+                text: {
+                    field: 'text',
+                    defaultValue: ''
+                },
+                CreatedAt: {
+                    field: 'CreatedAt',
+                    defaultValue: new Date()
+                },
+                image: {
+                    fields: 'image',
+                    defaultValue: null
+                },
+                is_hidden: {
+                    fields: 'is_hidden',
+                    defaultValue: null
+                },
+                position: {
+                    fields: 'position',
+                    defaultValue: null
+                },
+                status: {
+                    fields: 'status',
+                    defaultValue: null
+                },
+                story: {
+                    fields: 'story',
+                    defaultValue: null
+                },
+                story_id: {
+                    fields: 'story_id',
+                    defaultValue: null
+                },
+                UserId: {
+                    field: 'UserId',
+                    defaultValue: null
+                },
+            },
+            CreatedAtFormatted: function () {
+
+                return app.helper().formatDate(this.get('CreatedAt'));
+            },
+            ImageUrl: function () {
+                return app.helper().resolvePictureUrl(this.get('image'));
+            },
+            User: function () {
+
+                var userId = this.get('UserId');
+
+                var user = $.grep(app.Users.users(), function (e) {
+                    return e.Id === userId;
+                })[0];
+
+                return user ? {
+                    DisplayName: user.DisplayName,
+                    PictureUrl: app.helper().resolveProfilePictureUrl(user.Picture)
+                } : {
+                    DisplayName: 'Anonymous',
+                    PictureUrl: app.helper().resolveProfilePictureUrl()
+                };
+            },
+            isVisible: function () {
+                var currentUserId = app.Users.currentUser.data.Id;
+                var userId = this.get('UserId');
+
+                return currentUserId === userId;
+            }
+        };
+
         // Posts data source. The Backend Services dialect of the Kendo UI DataSource component
         // supports filtering, sorting, paging, and CRUD operations.
         var postsDataSource = new kendo.data.DataSource({
@@ -120,6 +120,8 @@ app.Posts = (function () {
         var init = function (e) {
             var users = app.Users.users();
 
+            $('.btn.btn-circle').attr('href', "views/createPostView.html?story_id=" + e.view.params.story_id);
+
             if (e.view.params.story_id) {
 
                 postsModel.posts.filter({
@@ -134,10 +136,10 @@ app.Posts = (function () {
                 app.helper().reload();
             }
 
-            e.view.element.find("#posts-listview").kendoMobileListView({
-                dataSource: postsModel.posts,
-                template: $("#postTemplate").html()
-            })//.kendoTouch({
+            // e.view.element.find("#posts-listview").kendoMobileListView({
+            //     dataSource: postsModel.posts,
+            //     template: $("#postTemplate").html()
+            // })//.kendoTouch({
             //     filter: ">li",
             //     enableSwipe: true,
             //     touchstart: touchstart,
@@ -204,7 +206,6 @@ app.Posts = (function () {
         return {
             init: init,
             posts: postsModel.posts,
-            storyPosts: postsModel.storyPosts,
             postSelected: postSelected,
             logout: logout
         };

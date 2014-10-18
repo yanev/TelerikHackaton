@@ -33,18 +33,44 @@ app.CreatePost = (function () {
         var addImage = function() {
             var success = function (data) {
                 var filename = Math.random().toString(36).substring(2, 15) + ".jpg";
-                app.everlive().Files.create({
-                    Filename: filename,
-                    ContentType: "image/jpeg",
-                    base64: data
-                }).then(function(result) {
-                    // Show the captured photo.
-                    $('.create-post-image')
-                        .attr('src', "data:image/jpeg;base64," + data)
-                        .removeClass('hidden')
-                        .data('filename', filename)
-                        .data('base64', data);
+
+                var fileObj = {
+                    "Filename"    : filename,
+                    "ContentType" : 'image/jpeg',
+                    "base64"      : data
+                };
+
+                $('.create-post-image')
+                    .attr('src', "data:image/jpeg;base64," + data)
+                    .removeClass('hidden');
+
+                $.ajax({
+                    type: "POST",
+                    url: 'https://api.everlive.com/v1/' + appSettings.everlive.apiKey + '/Files',
+                    contentType: "application/json",
+                    data: JSON.stringify(fileObj),
+                    error: function(error){
+                        navigator.notification.alert(JSON.stringify(error));
+                    }
+                }).done(function(data){
+                    // var item = imagesViewModel.images.add();
+                    // item.Title = that.get('picTitle');
+                    // item.Picture = data.Result.Id;
+                    $('.create-post-image').data('imageId', data.Result.Id);
                 });
+
+                // app.everlive().Files.create({
+                //     Filename: filename,
+                //     ContentType: "image/jpeg",
+                //     base64: data
+                // }).then(function(result) {
+                //     // Show the captured photo.
+                //     $('.create-post-image')
+                //         .attr('src', "data:image/jpeg;base64," + data)
+                //         .removeClass('hidden')
+                //         .data('filename', filename)
+                //         .data('base64', data);
+                // });
             };
             var error = function () {
                 navigator.notification.alert("Unfortunately we could not add the image");
@@ -76,7 +102,7 @@ app.CreatePost = (function () {
                 post.text = $newPost.val();
                 post.story = app.postsCurrentStory;
 
-                post.image = $('.create-post-image').data('filename');
+                post.image = $('.create-post-image').data('imageId');
                 post.UserId = app.Users.currentUser.get('data').Id;
 
                 posts.one('sync', function () {
