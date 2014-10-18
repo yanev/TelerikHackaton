@@ -204,7 +204,6 @@
 
 #storyApp .km-header .nav-button {
   display: inline-block;
-  margin: 0;
   padding: 0;
   width: 2em;
   height: 2em;
@@ -217,6 +216,7 @@
 #storyApp .km-header .nav-button-back {
   background-image: url(/images/icon-arrow_left.png);
   background-position: .65em 50%;
+  margin-left: 15px;
 }
 
 #storyApp .km-header .nav-button-add {
@@ -235,6 +235,9 @@
   opacity: .6;
 }
 
+#storyApp .km-header .nav-button-cancel {
+  margin-left: 10px;
+}
 #storyApp .km-header .nav-button-cancel,
 #storyApp .km-header .nav-button-post {
   width: auto;
@@ -252,6 +255,8 @@
 
 #storyApp.km-flat .km-header .km-navbar {
   min-height: 3.15em;
+  background: #E5E1D7;
+  color: #370000;
 }
 
 #storyApp.km-flat.km-on-ios.km-black-translucent-status-bar .km-header .km-navbar {
@@ -260,7 +265,7 @@
 
 #storyApp.km-flat .km-header .km-view-title {
   margin-top: .4em;
-  font-size: 1rem;
+  font-size: 20px;
 }
 
 #storyApp.km-flat.km-on-ios.km-black-translucent-status-bar .km-header .km-view-title {

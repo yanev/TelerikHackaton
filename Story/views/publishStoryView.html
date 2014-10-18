@@ -1,0 +1,48 @@
+<div data-role="view" id="publish" data-layout="default" data-transition="overlay:down" class="publish-story-view"
+    data-init="app.PublishStory.init" data-show="app.PublishStory.show" data-model="app.PublishStory">
+    <header data-role="header">
+        <div data-role="navbar">
+            Share
+            <a class="nav-button nav-button-cancel" data-align="left" data-role="backbutton">
+                <i class="icon icon-arrow-left"></i>
+            </a>
+        </div>
+    </header>
+    <div id="publishStory">
+        <div class="location">
+            <i class="icon icon-location pull-left"></i>
+            <span>Sofia, Bulgaria</span>
+        </div>
+        <iframe
+          width="100%"
+          height="470"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAIMhLNMQlHripyDE9tNU0rBjjcGBQldho&amp;q=bulevard+"Aleksandar+Malinov"+33,+1729+Sofia">
+        </iframe>
+
+        <div class="visibility">
+            <ul id="select-story-status" data-role="buttongroup">
+                <li>Private story</li>
+                <li>Public story</li>
+            </ul>
+            <input id="storyStatus" type="hidden" />
+        </div>
+        <div class="share">
+            <span class="pull-left">Share</span>
+            <div class="social">
+                <i class="icon-facebook pull-right"></i>
+                <i class="icon-twitter pull-right"></i>
+                <i class="icon-tumblr pull-right"></i>
+                <i class="icon-instagram pull-right"></i>
+                <i class="icon-googleplus pull-right"></i>
+            </div>
+        </div>
+        <div class="publish">
+            <span data-role="touch" data-bind="events: { tap: publishStory }">
+                <button class="btn btn-publish">
+                    Publish story
+                </button>
+            </span>
+        </div>
+    </div>
+</div>

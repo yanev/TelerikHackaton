@@ -29,3 +29,95 @@
 .post-action-hide:visible + .post-content {
   margin-left: 240px;
 }
+
+/* line 27, ../sass/stories.sass */
+i.icon.icon-arrow-left {
+  font-size: 26px;
+  position: relative;
+  top: 4px;
+}
+
+/* line 32, ../sass/stories.sass */
+#publishStory .location {
+  background: white;
+  height: 60px;
+  padding: 10px 15px;
+  color: #717171;
+}
+/* line 37, ../sass/stories.sass */
+#publishStory .location i {
+  float: left;
+  margin-right: 10px;
+  font-size: 26px;
+  color: #583000;
+  position: relative;
+  top: 5px;
+}
+/* line 44, ../sass/stories.sass */
+#publishStory .location span {
+  vertical-align: middle;
+  line-height: 40px;
+  float: left;
+}
+/* line 49, ../sass/stories.sass */
+#publishStory .share {
+  background: white;
+  color: #626262;
+  padding: 10px 15px;
+  overflow: hidden;
+}
+/* line 54, ../sass/stories.sass */
+#publishStory .share span {
+  float: left;
+  padding-top: 15px;
+  font-size: 16px;
+}
+/* line 58, ../sass/stories.sass */
+#publishStory .share .social {
+  float: right;
+  padding-top: 10px;
+}
+/* line 61, ../sass/stories.sass */
+#publishStory .share .social i {
+  font-size: 26px;
+  color: #cbc2b2;
+  margin-left: 3px;
+  cursor: pointer;
+}
+/* line 66, ../sass/stories.sass */
+#publishStory .share .social i:active, #publishStory .share .social i:hover, #publishStory .share .social i.selected {
+  color: #583000;
+}
+/* line 69, ../sass/stories.sass */
+#publishStory .publish {
+  background: white;
+  padding: 10px 15px;
+}
+/* line 73, ../sass/stories.sass */
+#publishStory .visibility {
+  background: white;
+  padding: 20px 15px;
+  overflow: hidden;
+  border-bottom: 1px solid #e7e7e7;
+  margin-top: -3px;
+}
+/* line 79, ../sass/stories.sass */
+#publishStory .visibility .km-buttongroup {
+  display: block !important;
+  width: 100% !important;
+}
+/* line 82, ../sass/stories.sass */
+#publishStory .visibility .km-buttongroup li {
+  display: block !important;
+  width: 50% !important;
+  float: left;
+  background: white;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+}
+/* line 90, ../sass/stories.sass */
+#publishStory .visibility .km-buttongroup li.km-state-active {
+  background: #583000;
+  color: white;
+}

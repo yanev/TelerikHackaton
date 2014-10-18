@@ -23,11 +23,6 @@ app.CreatePost = (function () {
             validator = $('#enterPost').kendoValidator().data("kendoValidator");
             $newPost = $('#postText');
             $newImage = $('#postImage');
-
-
-            document.addEventListener("deviceready", function () {
-                alert('device ready');
-            });
         };
 
         var addImage = function() {

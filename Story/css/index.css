@@ -24,24 +24,12 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#e33f28;
-    background-image:linear-gradient(top, #e33f28 0%, #e97028 51%);
-    background-image:-webkit-linear-gradient(top, #e33f28 0%, #e97028 51%);
-    background-image:-ms-linear-gradient(top, #e33f28 0%, #e97028 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #e33f28),
-        color-stop(0.51, #e97028)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    background-color: #E5E1D7;
+    font-family: 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform: uppercase;
     width:100%;
 }
 
@@ -112,19 +100,9 @@ body {
   margin: 0 auto;
   border: 0 none;
   max-width: 600px;
-  background-color:#e33f28;
-    background-image:linear-gradient(top, #e33f28 0%, #e97028 51%);
-    background-image:-webkit-linear-gradient(top, #e33f28 0%, #e97028 51%);
-    background-image:-ms-linear-gradient(top, #e33f28 0%, #e97028 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #e33f28),
-        color-stop(0.51, #e97028)
-    );
-    background-attachment:fixed;
-  color: #fff;
+  width: 100%;
+  background-color: #DEDEDE;
+  color: #3A0000;
   font-family: "Open Sans", sans-serif;
 }
 
