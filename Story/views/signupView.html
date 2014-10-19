@@ -2,7 +2,9 @@
     <header data-role="header">
         <div data-role="navbar">
             Sign up
-            <a class="nav-button nav-button-back hide-text" data-align="left" data-role="backbutton" href="#welcome">Back</a>
+            <a class="nav-button nav-button-cancel" data-align="left" data-role="backbutton" href="#welcome">
+                <i class="icon icon-arrow-left"></i>
+            </a>
         </div>
     </header>
     <form id="signUp">
@@ -18,16 +20,6 @@
             </li>
             <li>
                 <input type="password" id="signupPassword" data-bind="value: Password" placeholder="Password" required/>
-            </li>
-            <li class="select-wrp">
-                <select id="signupGenderPicker" data-bind="value: Gender" onchange="app.Signup.onSelectChange(this)">
-                    <option value="0" selected>Gender</option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                </select>
-            </li>
-            <li class="txtarea-wrp">
-                <textarea id="signupInfo" data-bind="value: About" placeholder="About">User account created from the hybrid app.</textarea>
             </li>
         </ul>
     </form>

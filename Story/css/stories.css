@@ -101,13 +101,14 @@ i.icon.icon-arrow-left {
   border-bottom: 1px solid #e7e7e7;
   margin-top: -3px;
 }
-/* line 79, ../sass/stories.sass */
-#publishStory .visibility .km-buttongroup {
+
+/* line 80, ../sass/stories.sass */
+.km-buttongroup {
   display: block !important;
   width: 100% !important;
 }
-/* line 82, ../sass/stories.sass */
-#publishStory .visibility .km-buttongroup li {
+/* line 83, ../sass/stories.sass */
+.km-buttongroup li {
   display: block !important;
   width: 50% !important;
   float: left;
@@ -116,8 +117,8 @@ i.icon.icon-arrow-left {
   text-align: center;
   font-size: 15px;
 }
-/* line 90, ../sass/stories.sass */
-#publishStory .visibility .km-buttongroup li.km-state-active {
+/* line 91, ../sass/stories.sass */
+.km-buttongroup li.km-state-active {
   background: #583000;
-  color: white;
+  color: white !important;
 }
