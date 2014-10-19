@@ -31,7 +31,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>Story</title>
 
-        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,800" rel="stylesheet" type="text/css" />
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,300,700,800' rel='stylesheet' type='text/css'>
         <link href="css/kendo.mobile.all.min.css" rel="stylesheet" />
     </head>
     <body id="storyApp">
@@ -47,13 +47,41 @@
         </section>
         <!--WELCOME VIEW -->
         <div data-role="view" id="welcome" data-layout="default" class="welcome-scrn form-view" data-model="app.Login" data-init="app.Login.init" data-show="app.Login.show" data-transition="slide">
-            <header data-role="header"></header>
-            <div class="app-logo">Chapter |</div>
-
-            <form id="login-form">
-                <ul data-role="listview" data-style="inset">
-                    <li class="username"><input type="text" id="loginUsername" placeholder="Username" required validationMessage="Username is required!" /></li>
-                    <li class="password"><input type="password" id="loginPassword" placeholder="Password" required validationMessage="Password is required!" /></li>
+              <header data-role="header"></header>
+              <div class="app-logo">Chapter |</div>
+              
+                  <ul class="login-screen-wrapper" data-role="touch" data-enable-swipe="1" data-swipe="app.Login.changeSLide">
+                      <li class="login-screen intro-screen">
+                        Collaborate in amazing stories with your freinds.
+                      </li>
+                      <li class="login-screen intro-screen">
+                        Share your sto-<br>ries for the world to see.<br>Get amazing
+                      </li>
+                      <li id="login-screen-form" class="login-screen">
+                          <form id="login-form">
+                              <ul data-role="listview" data-style="inset">
+                                  <li class="username"><input type="text" id="loginUsername" placeholder="Username" required validationMessage="Username is required!" /></li>
+                                  <li class="password"><input type="password" id="loginPassword" placeholder="Password" required validationMessage="Password is required!" /></li>
+                              </ul>
+                          </form>
+                          <ol class="group-wrp">
+                              <li>
+                                  <span id="login" data-role="touch" data-bind="events: { tap: login }">
+                                      <a data-role="button" class="kbtn kbtn-login">Login</a>
+                                  </span>
+                              </li>
+                              <li class="oauth cf">
+                                  <span id="loginWithFacebook" class="oauth-item" data-role="touch" data-bind="events: { tap: loginWithFacebook }">
+                                      <a data-role="button" class="kbtn kbtn-login-fb">Login with Facebook</a>
+                                  </span>
+                              </li>
+                              <li class="signup">
+                                  <a data-role="button" href="views/signupView.html" class="kbtn-signup">Don't have an account?</a>
+                              </li>
+                          </ol>
+              
+                          <div data-role="footer"><p>© <span data-bind="text: getYear"></span> The Enhancers</p></div>
+                    </li>
                 </ul>
             </form>
             <ol class="group-wrp">
