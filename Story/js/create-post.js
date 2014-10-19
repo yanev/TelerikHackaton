@@ -17,7 +17,7 @@ app.CreatePost = (function () {
 
             var users = app.Users.users();
             if (!users) {
-                app.helper().reload();
+                // app.helper().reload();
             }
 
             validator = $('#enterPost').kendoValidator().data("kendoValidator");

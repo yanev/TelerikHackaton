@@ -133,7 +133,7 @@ app.Posts = (function () {
             }
 
             if (!users) {
-                app.helper().reload();
+                // app.helper().reload();
             }
 
             // e.view.element.find("#posts-listview").kendoMobileListView({

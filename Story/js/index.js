@@ -36,14 +36,12 @@ var app = {
         this.everlive();
         $("#mobile-tabstrip").kendoMobileTabStrip({
             select: function(e) {
-                console.log("Tabstrip item selected:" + e.item.text());
-                console.log(e.item.attr('id'));
                 if (e.item.attr('id') == 'menu-browse') {
-
+                    self.mobileApp.navigate('views/homeView.html');
                 } else if (e.item.attr('id') == 'menu-create') {
                     self.mobileApp.navigate('views/createStoryView.html');
                 } else if (e.item.attr('id') == 'menu-profile') {
-                    self.mobileApp.navigate('views/viewProfile.html');
+                    self.mobileApp.navigate('views/profileView.html');
                 }
             }
         });
@@ -70,7 +68,7 @@ var app = {
         {
           var listeningElement = parentElement.querySelector('.listening');
           var receivedElement = parentElement.querySelector('.received');
-  
+
           listeningElement.setAttribute('style', 'display:none;');
           receivedElement.setAttribute('style', 'display:block;');
         }

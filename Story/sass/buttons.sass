@@ -4,10 +4,12 @@
 	&.btn-circle
 		position: relative
 		font-size: 15px
-		color: #FF5700
-		background: none
+		color: #563000 !important
+		background: none !important
+		border: none !important
 		position: relative
-		line-height: 100px
+		line-height: 130px
+		text-align: center !important
 		&:before
 			content: ''
 			width: 107px
@@ -16,8 +18,8 @@
 			position: absolute
 			top: -50px
 			left: 50%
-			margin-left: -50px
-			border: 1px solid #FF5700
+			margin-left: -55px
+			border: 1px solid #563000
 			+border-radius(52px)
 		&.btn-circle-friend
 			color: #563000
@@ -34,7 +36,13 @@
 		color: white
 		cursor: pointer
 		margin-bottom: 10px
-
+	&.btn-add-post
+		background: none !important
+		border: none !important
+		font-weight: bold
+		+font('Helvetica')
+		font-size: 18px
+		margin-top: 100px
 .nav-button-wireframe
 	border: 2px solid #765F4B !important
 	width: auto !important
@@ -44,6 +52,11 @@
 	font-size: 16px
 	margin: 0 !important
 
+	&.nav-button-wireframe-green
+		color: #0EBF50
+		border-color: #0EBF50 !important
+		&.km-state-active
+			color: #0EBF50 !important
 
 .nav-button-cancel
 	.icon-close

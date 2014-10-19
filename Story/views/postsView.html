@@ -1,16 +1,16 @@
 <div data-role="view" id="view-all-posts" data-layout="default" class="posts-view" data-model="app.Posts" data-init="app.Posts.init">
     <header data-role="header">
         <div data-role="navbar">
-            Content
-            <a class="nav-button nav-button-back hide-text" data-align="left" data-role="backbutton">Back</a>
-            <a class="nav-button nav-button-next" data-align="right" data-role="button" data-bind="click: publishStory">Next</a>
+            Story
+            <a class="nav-button nav-button-cancel" data-align="left" data-role="backbutton"><i class="icon icon-arrow-left"></i></a>
+            <a class="nav-button nav-button-wireframe" data-align="right" data-role="button" href="views/publishStoryView.html" data-bind="click: publishStory">Next</a>
         </div>
     </header>
 
     <ul id="posts-listview" data-style="inset" data-role="listview" data-template="postTemplate"
         data-bind="source: posts"></ul>
     <p id="no-posts" hidden="hidden" class="no-items-msg">
-        <a class="btn btn-circle" data-align="right" data-role="button" href="views/createPostView.html">Add content</a>
+        <a class="btn btn-add-post" data-align="right" data-role="button" href="views/createPostView.html">+ Add content</a>
     </p>
 </div>
 
