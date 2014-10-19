@@ -19,7 +19,7 @@ app.CreateStory = (function () {
 
             var users = app.Users.users();
             if (!users) {
-                app.helper.reload();
+                // app.helper().reload();
             }
 
             validator = $('#enterStory').kendoValidator().data("kendoValidator");
@@ -27,7 +27,7 @@ app.CreateStory = (function () {
             $storyStatus = $('#storyStatus');
             $storyStatusButtons = $("#select-story-status").kendoMobileButtonGroup({
                 select: function(e, data) {
-                    $storyStatus.val(app.Stories.storyType[this.current().index()]);                     
+                    $storyStatus.val(app.Stories.storyType[this.current().index()]);
                 },
                 index: 0
             });

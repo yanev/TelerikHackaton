@@ -23,6 +23,7 @@ var app = {
 
     // Application Constructor
     initialize: function() {
+        var self = this;
         this.bindEvents();
 
         // Initialize KendoUI mobile application
@@ -33,6 +34,19 @@ var app = {
         });
 
         this.everlive();
+        $("#mobile-tabstrip").kendoMobileTabStrip({
+            select: function(e) {
+                console.log("Tabstrip item selected:" + e.item.text());
+                console.log(e.item.attr('id'));
+                if (e.item.attr('id') == 'menu-browse') {
+
+                } else if (e.item.attr('id') == 'menu-create') {
+                    self.mobileApp.navigate('views/createStoryView.html');
+                } else if (e.item.attr('id') == 'menu-profile') {
+                    self.mobileApp.navigate('views/viewProfile.html');
+                }
+            }
+        });
     },
     // Bind Event Listeners
     //

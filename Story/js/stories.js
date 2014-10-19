@@ -26,6 +26,10 @@ app.Stories = (function () {
                     field: 'status',
                     defaultValue: null
                 },
+                cover: {
+                    field: 'cover',
+                    defaultValue: null
+                },
                 UserId: {
                     field: 'UserId',
                     defaultValue: null
@@ -35,9 +39,8 @@ app.Stories = (function () {
 
                 return app.helper().formatDate(this.get('CreatedAt'));
             },
-            PictureUrl: function () {
-
-                return app.helper().resolvePictureUrl(this.get('Picture'));
+            CoverUrl: function () {
+                return app.helper().resolvePictureUrl(this.get('cover'));
             },
             User: function () {
 

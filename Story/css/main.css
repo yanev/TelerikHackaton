@@ -12,3 +12,78 @@
 .create-post-image {
   display: none;
 }
+
+/* line 8, ../sass/main.sass */
+a {
+  color: #563000;
+}
+
+/* line 10, ../sass/main.sass */
+h3.section {
+  margin-left: 0 !important;
+  font-weight: normal;
+  color: #7f7f7f;
+}
+/* line 14, ../sass/main.sass */
+h3.section.section-trending {
+  margin-top: 15px;
+}
+
+/* line 16, ../sass/main.sass */
+h3.trending-story-title {
+  margin: 15px 0 !important;
+  font-size: 18px;
+}
+
+/* line 20, ../sass/main.sass */
+.featured-tags {
+  margin-left: -25px;
+  overflow: hidden;
+}
+/* line 23, ../sass/main.sass */
+.featured-tags .featured-tag {
+  float: left;
+  width: 45%;
+  margin-left: 25px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+/* line 29, ../sass/main.sass */
+.featured-tags .featured-tag img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* line 33, ../sass/main.sass */
+.featured-tags .featured-tag span {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 5px;
+  display: block;
+}
+
+/* line 40, ../sass/main.sass */
+#home {
+  background: white;
+  padding: 15px;
+  margin: 0;
+}
+
+/* line 47, ../sass/main.sass */
+#trending-listview li {
+  margin-left: -8px;
+}
+
+/* line 52, ../sass/main.sass */
+.km-widget.km-tabstrip .km-button {
+  color: #baab97 !important;
+  background: #e6e0da !important;
+}
+/* line 55, ../sass/main.sass */
+.km-widget.km-tabstrip .km-button.km-state-active {
+  color: #572f00 !important;
+}
+/* line 57, ../sass/main.sass */
+.km-widget.km-tabstrip .km-button .km-text {
+  font-size: 16px;
+}

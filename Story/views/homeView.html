@@ -1,0 +1,42 @@
+<div data-role="view" id="share" data-layout="default" data-transition="overlay:down" class="home-view"
+    data-init="app.Home.init" data-show="app.Home.show" data-model="app.Stories">
+    <header data-role="header">
+        <div data-role="navbar">
+            Chapter |
+        </div>
+    </header>
+    <div id="home" data-role="listview" data-style="inset">
+        <h3 class="section">Tags</h3>
+
+        <div class="featured-tags">
+            <a href="#" class="featured-tag">
+                <img src="images/tag1.jpg" alt=""/>
+                <span>#trip</span>
+            </a>
+
+            <a href="#" class="featured-tag">
+                <img src="images/tag2.jpg" alt=""/>
+                <span>#fun-story</span>
+            </a>
+            <a href="#" class="featured-tag">
+                <img src="images/tag3.jpg" alt=""/>
+                <span>#Staff-picks</span>
+            </a>
+            <a href="#" class="featured-tag">
+                <img src="images/tag4.jpg" alt=""/>
+                <span>#friends</span>
+            </a>
+        </div>
+        <h3 class="section section-trending">Trending</h3>
+
+        <ul id="trending-listview" data-style="inset" data-role="listview" data-template="trending-template"
+        data-bind="source: stories"></ul>
+    </div>
+</div>
+<script type="text/x-kendo-tmpl" id="trending-template">
+    <div class="trending-story">
+        <img data-bind="attr:{src: CoverUrl()}" alt="#=name# image" width="100%"/>
+        <h3 class="trending-story-title">#:name#</h3>
+        <img src="images/trending_story_icons.jpg"/>
+    </div>
+</script>
