@@ -97,6 +97,24 @@ app.Stories = (function () {
     // Stories view model
     var storiesViewModel = (function () {
 
+        var storiesData;
+
+
+        // Retrieve current user and all users data from Backend Services
+        var loadStories = function () {
+
+            // Get the data about the currently logged in user
+            return app.everlive().Stories.get()
+            .then(function (data) {
+                storiesData = new kendo.data.ObservableArray(data.result);
+            })
+            .then(null,
+                  function (err) {
+                      app.showError(err.message);
+                  }
+            );
+        };
+
         var init = function () {
             var users = app.Users.users();
             if (!users) {
@@ -124,7 +142,7 @@ app.Stories = (function () {
                 navigateHome();
             });
         };
-      
+
         var storyNavigate = function (e) {
             app.mobileApp.navigate('views/showStoryView.html?story_id=' + e.data.Id);
         };

@@ -2,12 +2,13 @@
     data-init="app.ShowStory.init" data-show="app.ShowStory.show" data-model="app.ShowStory">
     <header data-role="header">
         <div data-role="navbar">
-            ${name}
+            <div class="story-title hidden"></div>
             <a class="nav-button nav-button-cancel" data-align="left" data-role="backbutton">
                 <i class="icon icon-arrow-left"></i>
             </a>
         </div>
     </header>
+    <img src="" class="story-cover hidden" width="100%">
     <div id="showStory" data-role="listview" data-style="inset" data-template="post-template"
         data-bind="source: posts">
     </div>
