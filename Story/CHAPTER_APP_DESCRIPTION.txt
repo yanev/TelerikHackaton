@@ -1,0 +1,12 @@
+Chapter is a cross-platform app that turn your best moments into memorable stories and helps you capture all points of view by collaborating with the people who were actually there.
+
+How it works?
+1) The author of the story names the Chapter (e.g. "Adventures in the Alps") and invites the people (Characters) that were or will be involved in the story.
+2) Then he starts filling the Chapter with relevant content.
+3) The best part comes when the invited collaborators start posting their own content. Chapter automatically orders it chronologically making it easier for the all co-authors to catch the flow of the story and fill the missing parts.
+4) Finally the author of the Chapter chooses what content should be edited or removed from the story and publishes it officially in the social medias he wants. All co-authors receive notification when the Chapter was published.
+
+The end result? 
+All participants receive a memorable story of their experience for which they have personally contributed for, enabling them to see all the different points of view, that were hidden before. 
+
+PS: We've tested the Value Proposition hypothesis by creating our own Chapter of the Hackaton and we could proudly say that the results was an EPIC FUN!
