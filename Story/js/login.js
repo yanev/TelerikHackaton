@@ -34,7 +34,7 @@ app.Login = (function () {
             $slides = $('.login-screen');
             //$slides.on("click", changeSLide);
             $slide_buttons = $('#login-screen-tab');
-            if (localStorage && !localStorage.getItem('firstOpen'))
+            if (1 || localStorage && !localStorage.getItem('firstOpen'))
             {
               $slides.hide();
               $slides.eq(0).show();
