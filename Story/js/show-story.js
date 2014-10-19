@@ -8,7 +8,18 @@ app.ShowStory = (function () {
     var showStoryViewModel = (function () {
 
         var init = function (e) {
-            alert(e.view.params.story_id);
+            if (e.view.params.story_id) {
+              
+              $("#showStory").kendoMobileListView({
+                dataSource: app.Posts.posts,
+                template: $("#post-template").text(),
+                /*filterable: {
+                    field: "story",
+                    operator: "eq",
+                    value: e.view.params.story_id
+                }*/
+            });
+            }
         };
 
         var show = function () {

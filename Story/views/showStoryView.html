@@ -8,4 +8,17 @@
             </a>
         </div>
     </header>
+    <div id="showStory" data-role="listview" data-style="inset" data-template="post-template"
+        data-bind="source: posts">
+    </div>
 </div>
+<script type="text/x-kendo-tmpl" id="post-template">
+    <div class="story-post">
+        # if (ImageUrl()) { #
+        <img data-bind="attr:{src: ImageUrl}" alt=" image" width="100%"/>
+        # } #
+        # if (text) { #
+        <p class="trending-story-title">#:text#</p>
+        # } #
+    </div>
+</script>
