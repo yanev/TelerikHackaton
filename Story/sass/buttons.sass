@@ -1,4 +1,4 @@
-
+@import "mixins.sass"
 
 .btn
 	&.btn-circle
@@ -6,15 +6,23 @@
 		font-size: 15px
 		color: #FF5700
 		background: none
+		position: relative
+		line-height: 100px
 		&:before
 			content: ''
 			width: 107px
 			height: 108px
 			display: block
 			position: absolute
-			top: 0
+			top: -50px
 			left: 50%
 			margin-left: -50px
+			border: 1px solid #FF5700
+			+border-radius(52px)
+		&.btn-circle-friend
+			color: #563000
+			&:before
+				border-color: #563000
 	&.btn-publish
 		width: 100%
 		height: 45px
@@ -26,3 +34,18 @@
 		color: white
 		cursor: pointer
 		margin-bottom: 10px
+
+.nav-button-wireframe
+	border: 2px solid #765F4B !important
+	width: auto !important
+	padding: 5px 10px !important
+	height: 27px
+	border-radius: 4px
+	font-size: 16px
+	margin: 0 !important
+
+
+.nav-button-cancel
+	.icon-close
+		font-size: 40px
+
