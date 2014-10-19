@@ -124,13 +124,18 @@ app.Stories = (function () {
                 navigateHome();
             });
         };
+      
+        var storyNavigate = function (e) {
+            app.mobileApp.navigate('views/showStoryView.html?story_id=' + e.data.Id);
+        };
 
         return {
             init: init,
             stories: storiesModel.stories,
             storySelected: storySelected,
             logout: logout,
-            storyType: storiesModel.storyType
+            storyType: storiesModel.storyType,
+            storyNavigate: storyNavigate
         };
 
     }());

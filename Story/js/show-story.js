@@ -7,8 +7,8 @@ app.ShowStory = (function () {
 
     var showStoryViewModel = (function () {
 
-        var init = function () {
-
+        var init = function (e) {
+            alert(e.view.params.story_id);
         };
 
         var show = function () {

@@ -25,6 +25,10 @@ app.Home = (function () {
 
         };
 
+        var storyNavigate = function (e) {
+            app.mobileApp.navigate('views/showStoryView.html?story_id=' + e.data("Id"));
+        };
+
         return {
             init: init,
             show: show

@@ -202,12 +202,18 @@ app.Posts = (function () {
                 navigateHome();
             });
         };
+      
+        var publishStory = function (e) {
+
+            app.mobileApp.navigate('views/publishStoryView.html?story_id=' + app.postsCurrentStory);
+        }
 
         return {
             init: init,
             posts: postsModel.posts,
             postSelected: postSelected,
-            logout: logout
+            logout: logout,
+            publishStory: publishStory
         };
 
     }());
