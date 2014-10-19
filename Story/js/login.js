@@ -14,7 +14,7 @@ app.Login = (function () {
         var isHttp = (appSettings.everlive.scheme === 'http');
 
         var isFacebookLogin = app.isKeySet(appSettings.facebook.appId) && app.isKeySet(appSettings.facebook.redirectUri);
-      
+
         var $slides;
         var $slide_buttons;
 
@@ -34,21 +34,21 @@ app.Login = (function () {
             $slides = $('.login-screen');
             //$slides.on("click", changeSLide);
             $slide_buttons = $('#login-screen-tab');
-            if (1 || localStorage && !localStorage.getItem('firstOpen'))
+            if (localStorage && !localStorage.getItem('firstOpen'))
             {
               $slides.hide();
               $slides.eq(0).show();
-  
+
               $slide_buttons.kendoMobileButtonGroup({
                   select: function(e, data) {
                       if (this.current().index() > 2) return;
                       $slides.hide();
                       $slides.eq(this.current().index()).show();
-                    
+
                       if (localStorage) {
                           localStorage.setItem('firstOpen', true);
                       }
-                    
+
                       if (this.current().index() >= 2) {
                         $slide_buttons.hide();
                       }
@@ -59,24 +59,24 @@ app.Login = (function () {
                 $slide_buttons.hide();
             }
         };
-      
+
         var changeSLide = function (e) {
           if (e.direction == 'left') {
             var buttongroup = $slide_buttons.data("kendoMobileButtonGroup");
             var nextSlide = buttongroup.current().index()+1;
-            
+
             if (nextSlide > 2) return;
-  
+
             // selects by jQuery object
             buttongroup.select(nextSlide);
-            
+
             $slides.hide();
             $slides.eq(nextSlide).show();
-          
+
             if (localStorage) {
                 localStorage.setItem('firstOpen', true);
             }
-            
+
             if (nextSlide >= 2) {
               $slide_buttons.hide();
             }
