@@ -32,7 +32,7 @@ app.Login = (function () {
             }
 
             $slides = $('.login-screen');
-            $slides.on("click", changeSLide);
+            //$slides.on("click", changeSLide);
             $slide_buttons = $('#login-screen-tab');
             if (1 || localStorage && !localStorage.getItem('firstOpen'))
             {
@@ -60,24 +60,26 @@ app.Login = (function () {
             }
         };
       
-        var changeSLide = function () {
-          var buttongroup = $slide_buttons.data("kendoMobileButtonGroup");
-          var nextSlide = buttongroup.current().index()+1;
+        var changeSLide = function (e) {
+          if (e.direction == 'left') {
+            var buttongroup = $slide_buttons.data("kendoMobileButtonGroup");
+            var nextSlide = buttongroup.current().index()+1;
+            
+            if (nextSlide > 2) return;
+  
+            // selects by jQuery object
+            buttongroup.select(nextSlide);
+            
+            $slides.hide();
+            $slides.eq(nextSlide).show();
           
-          if (nextSlide > 2) return;
-
-          // selects by jQuery object
-          buttongroup.select(nextSlide);
-          
-          $slides.hide();
-          $slides.eq(nextSlide).show();
-        
-          if (localStorage) {
-              localStorage.setItem('firstOpen', true);
-          }
-          
-          if (nextSlide >= 2) {
-            $slide_buttons.hide();
+            if (localStorage) {
+                localStorage.setItem('firstOpen', true);
+            }
+            
+            if (nextSlide >= 2) {
+              $slide_buttons.hide();
+            }
           }
         };
 
@@ -158,7 +160,8 @@ app.Login = (function () {
             show: show,
             getYear: app.getYear,
             login: login,
-            loginWithFacebook: loginWithFacebook
+            loginWithFacebook: loginWithFacebook,
+          changeSLide: changeSLide
         };
 
     }());
