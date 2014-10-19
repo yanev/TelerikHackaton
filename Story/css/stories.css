@@ -1,19 +1,85 @@
 /* line 3, ../sass/stories.sass */
+#create-story {
+  background: #e5e1d7;
+}
+
+/* line 5, ../sass/stories.sass */
 .textarea {
   color: black;
   background: white;
 }
 
-/* line 8, ../sass/stories.sass */
+/* line 9, ../sass/stories.sass */
+.add-cover {
+  background: #edeae5;
+  text-align: center;
+  height: 170px;
+  vertical-align: middle;
+  line-height: 170px;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  cursor: pointer;
+}
+/* line 18, ../sass/stories.sass */
+.add-cover strong {
+  font-size: 20px;
+}
+
+/* line 21, ../sass/stories.sass */
+.story-name {
+  height: 205px;
+  background: white;
+  overflow: hidden;
+  padding: 0 15px;
+}
+/* line 26, ../sass/stories.sass */
+.story-name .k-invalid-msg {
+  padding-left: 0px;
+}
+/* line 28, ../sass/stories.sass */
+.story-name textarea {
+  height: 175px !important;
+  padding: 10px 0 !important;
+  float: left !important;
+  line-height: 40px !important;
+  font-family: "Raleway", sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 100 !important;
+}
+/* line 36, ../sass/stories.sass */
+.story-name textarea::-moz-placeholder {
+  line-height: 40px;
+}
+/* line 38, ../sass/stories.sass */
+.story-name textarea::-webkit-input-placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 40px;
+}
+
+/* line 44, ../sass/stories.sass */
+.story-status {
+  background: white;
+  margin-top: -8px;
+  padding: 10px 15px;
+  overflow: hidden;
+}
+/* line 49, ../sass/stories.sass */
+.story-status .km-buttongroup {
+  overflow: hidden;
+}
+
+/* line 51, ../sass/stories.sass */
 .post-content {
   color: black;
 }
-/* line 10, ../sass/stories.sass */
+/* line 53, ../sass/stories.sass */
 .post-content p {
   color: black;
 }
 
-/* line 13, ../sass/stories.sass */
+/* line 56, ../sass/stories.sass */
 .post-action-hide {
   background: red;
   padding: 15px;
@@ -25,26 +91,26 @@
   width: 240px;
 }
 
-/* line 23, ../sass/stories.sass */
+/* line 66, ../sass/stories.sass */
 .post-action-hide:visible + .post-content {
   margin-left: 240px;
 }
 
-/* line 27, ../sass/stories.sass */
+/* line 70, ../sass/stories.sass */
 i.icon.icon-arrow-left {
   font-size: 26px;
   position: relative;
   top: 4px;
 }
 
-/* line 32, ../sass/stories.sass */
+/* line 75, ../sass/stories.sass */
 #publishStory .location {
   background: white;
   height: 60px;
   padding: 10px 15px;
   color: #717171;
 }
-/* line 37, ../sass/stories.sass */
+/* line 80, ../sass/stories.sass */
 #publishStory .location i {
   float: left;
   margin-right: 10px;
@@ -53,47 +119,47 @@ i.icon.icon-arrow-left {
   position: relative;
   top: 5px;
 }
-/* line 44, ../sass/stories.sass */
+/* line 87, ../sass/stories.sass */
 #publishStory .location span {
   vertical-align: middle;
   line-height: 40px;
   float: left;
 }
-/* line 49, ../sass/stories.sass */
+/* line 92, ../sass/stories.sass */
 #publishStory .share {
   background: white;
   color: #626262;
   padding: 10px 15px;
   overflow: hidden;
 }
-/* line 54, ../sass/stories.sass */
+/* line 97, ../sass/stories.sass */
 #publishStory .share span {
   float: left;
   padding-top: 15px;
   font-size: 16px;
 }
-/* line 58, ../sass/stories.sass */
+/* line 101, ../sass/stories.sass */
 #publishStory .share .social {
   float: right;
   padding-top: 10px;
 }
-/* line 61, ../sass/stories.sass */
+/* line 104, ../sass/stories.sass */
 #publishStory .share .social i {
   font-size: 26px;
   color: #cbc2b2;
   margin-left: 3px;
   cursor: pointer;
 }
-/* line 66, ../sass/stories.sass */
+/* line 109, ../sass/stories.sass */
 #publishStory .share .social i:active, #publishStory .share .social i:hover, #publishStory .share .social i.selected {
   color: #583000;
 }
-/* line 69, ../sass/stories.sass */
+/* line 112, ../sass/stories.sass */
 #publishStory .publish {
   background: white;
   padding: 10px 15px;
 }
-/* line 73, ../sass/stories.sass */
+/* line 116, ../sass/stories.sass */
 #publishStory .visibility {
   background: white;
   padding: 20px 15px;
@@ -102,12 +168,12 @@ i.icon.icon-arrow-left {
   margin-top: -3px;
 }
 
-/* line 80, ../sass/stories.sass */
+/* line 123, ../sass/stories.sass */
 .km-buttongroup {
   display: block !important;
   width: 100% !important;
 }
-/* line 83, ../sass/stories.sass */
+/* line 126, ../sass/stories.sass */
 .km-buttongroup li {
   display: block !important;
   width: 50% !important;
@@ -117,8 +183,38 @@ i.icon.icon-arrow-left {
   text-align: center;
   font-size: 15px;
 }
-/* line 91, ../sass/stories.sass */
+/* line 134, ../sass/stories.sass */
 .km-buttongroup li.km-state-active {
   background: #583000;
   color: white !important;
+}
+
+/* line 139, ../sass/stories.sass */
+.story-members {
+  background: white;
+  overflow: hidden;
+}
+/* line 142, ../sass/stories.sass */
+.story-members .members {
+  list-style: none;
+  margin-left: -30px;
+  overflow: hidden;
+  padding-left: 15px;
+}
+/* line 147, ../sass/stories.sass */
+.story-members .members li {
+  float: left;
+  font-weight: bold;
+  margin-left: 30px;
+  text-align: center;
+}
+/* line 152, ../sass/stories.sass */
+.story-members .members li img {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* line 156, ../sass/stories.sass */
+.add-friends {
+  line-height: 50px;
 }

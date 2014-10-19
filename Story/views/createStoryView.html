@@ -1,15 +1,35 @@
-<div data-role="view" id="share" data-layout="default" data-transition="overlay:down" class="create-story-view"
+<div data-role="view" id="create-story" data-layout="default" data-transition="overlay:down" class="create-story-view"
     data-init="app.CreateStory.init" data-show="app.CreateStory.show" data-model="app.CreateStory">
     <header data-role="header">
         <div data-role="navbar">
-            Story
-            <a class="nav-button nav-button-cancel" data-align="left" data-role="backbutton">Cancel</a>
-            <a class="nav-button nav-button-post" data-align="right" data-role="button" data-bind="click: saveStory">Post</a>
+            Create
+            <a class="nav-button nav-button-cancel" data-align="left" data-role="backbutton"><i class="icon icon-close"></i></a>
+            <a class="nav-button nav-button-wireframe" data-align="right" data-role="button" data-bind="click: saveStory">Next</a>
         </div>
     </header>
     <div id="enterStory" class="share-form-wrp" data-role="listview" data-style="inset">
+        <div class="add-cover"><strong>+</strong> Add cover photo</div>
         <div class="story-name">
             <textarea id="storyName" placeholder="What's on your mind?" required validationMessage="Story title is required!"></textarea>
+        </div>
+        <div class="story-members">
+            <ul class="members">
+                <li>
+                    <img src="images/profiles/profile-1.png" alt=""/>
+                    Jane
+                </li>
+                <li>
+                    <img src="images/profiles/profile-2.png" alt=""/>
+                    John
+                </li>
+                <li>
+                    <img src="images/profiles/profile-3.png" alt=""/>
+                    Jeniffer
+                </li>
+                <li>
+                    <a class="add-friends">+ Add friends</a>
+                </li>
+            </ul>
         </div>
         <div class="story-status">
             <ul id="select-story-status" data-role="buttongroup">
@@ -17,7 +37,7 @@
                 <li>Closed story</li>
             </ul>
             <input id="storyStatus" type="hidden" />
-            <p id="helpStoryStatus" class="centered-text">What is the difference?</p>
+            <!-- <p id="helpStoryStatus" class="centered-text">What is the difference?</p> -->
         </div>
     </div>
 </div>

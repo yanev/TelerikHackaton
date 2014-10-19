@@ -104,3 +104,8 @@ h3.trending-story-title {
 .km-widget.km-tabstrip .km-button .km-text {
   font-size: 16px;
 }
+
+/* line 71, ../sass/main.sass */
+.km-rightitem {
+  margin-right: 8px;
+}
