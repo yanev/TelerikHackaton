@@ -108,6 +108,12 @@
      -moz-border-radius: 2px 2px 0 0;
           border-radius: 2px 2px 0 0;
 }
+#storyApp.km-flat form .km-listinset > li,
+#storyApp.km-flat form .km-listgroupinset .km-list > li {
+  width: 235px;
+  margin: 0 auto 10px;
+
+}
 
 #storyApp.km-flat form .km-listinset > li:last-child,
 #storyApp.km-flat form .km-listgroupinset .km-list > li:last-child {
@@ -161,17 +167,25 @@
 
 #storyApp .kbtn-login,
 #storyApp .signup-view .kbtn-signup {
-  background-color: white;
-  color: #FF4800;
+  background-color: #E5E1D7;
+  color: #563000;
+  border:1px solid #563000;
 }
-
+#storyApp .kbtn-signup.km-widget.km-button {
+  background: none !important;
+  border: none;
+  margin-top: 20px;
+}
 #storyApp .kbtn-login:hover,
 #storyApp .signup-view .kbtn-signup:hover {
-  background-color: #ea7b39;
+  background-color: #563000;
+  color: white;
 }
 
 #storyApp .signup-view .kbtn-signup {
   display: block;
+  background: none !important;
+  color: #563000;
 }
 
 #storyApp .signup-view .kbtn-signup,
@@ -288,7 +302,7 @@
 
 #storyApp .app-logo,
 #storyApp .app-name {
-  margin-top: 2.5em;
+  margin-top: 100px;
 }
 
 #storyApp .app-name {
@@ -331,7 +345,8 @@
 }
 
 #storyApp .welcome-scrn .group-wrp li {
-  margin: 1.5em 0 0;
+  width: 235px;
+  margin: 10px auto;
 }
 
 #storyApp .welcome-scrn .group-wrp .kbtn {

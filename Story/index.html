@@ -39,16 +39,16 @@
             <!--View content will render here-->
             <div data-role="footer">
                 <div id="mobile-tabstrip">
-                    <a id="menu-browse">Browse
-                    </a><a id="menu-create">Create
-                    </a><a id="menu-profile">Profile
+                    <a id="menu-browse">Browse</a>
+                    <a id="menu-create">Create</a>
+                    <a id="menu-profile">Profile</a>
                 </div>
             </div>
         </section>
         <!--WELCOME VIEW -->
         <div data-role="view" id="welcome" data-layout="default" class="welcome-scrn form-view" data-model="app.Login" data-init="app.Login.init" data-show="app.Login.show" data-transition="slide">
             <header data-role="header"></header>
-            <h2 class="app-name center-text">Story</h2>
+            <div class="app-logo">Chapter |</div>
 
             <form id="login-form">
                 <ul data-role="listview" data-style="inset">
@@ -62,11 +62,11 @@
                         <a data-role="button" class="kbtn kbtn-login">Login</a>
                     </span>
                 </li>
-                <li class="oauth cf">
+                <!-- <li class="oauth cf">
                     <span id="loginWithFacebook" class="oauth-item" data-role="touch" data-bind="events: { tap: loginWithFacebook }">
                         <a data-role="button" class="kbtn kbtn-login-fb">Login with Facebook</a>
                     </span>
-                </li>
+                </li> -->
                 <li class="signup">
                     <a data-role="button" href="views/signupView.html" class="kbtn-signup">Don't have an account?</a>
                 </li>
