@@ -1,3 +1,64 @@
 .centered-text {
   text-align:center;
 }
+
+.login-screen-wrapper {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.km-root .login-screen-wrapper .intro-screen {
+  padding:0 50px;
+  font-size:30px;
+  font-weight:300;
+}
+
+.login-screen {
+  display:none;
+}
+
+#login-screen-form {
+  display:block;
+}
+
+.km-flat, #storyApp.km-flat, #storyApp.km-flat .km-navbar, #storyApp.km-flat .km-content{
+  font-family: 'Raleway', sans-serif;
+}
+
+#storyApp .app-name {
+  font-size:30px;
+  font-weight:400;
+}
+
+#storyApp.km-flat, #storyApp.km-flat .km-navbar, #storyApp.km-flat .km-content {
+  /*background:url(../images/01-intro.jpg) no-repeat center 0;
+  background-size: cover;*/
+}
+
+#storyApp .app-logo, #storyApp .app-name {
+  margin-top:3.1em;
+}
+
+#storyApp .app-name {
+  margin-bottom:2.9em;
+}
+
+#login-screen-tab {
+  line-height:5px;
+  font-size:30px;
+}
+
+.km-root #login-screen-tab .km-button {
+  margin:0 !important;
+  padding:0;
+  background:transparent;
+  border:0;
+}
+
+.km-root .km-buttongroup .km-button {
+  color:#736448;
+}
+.km-flat .km-buttongroup .km-state-active {
+  color:#563000;
+}
