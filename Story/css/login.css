@@ -111,7 +111,8 @@
 #storyApp.km-flat form .km-listinset > li,
 #storyApp.km-flat form .km-listgroupinset .km-list > li {
   width: 235px;
-  margin: 0 auto 10px;
+  margin: 0 auto 15px;
+  border-radius: 5px !important;
 
 }
 
@@ -351,7 +352,12 @@
 
 #storyApp .welcome-scrn .group-wrp .kbtn {
   display: block;
+
 }
+#storyApp .welcome-scrn .group-wrp .kbtn.kbtn-login {
+  font-weight: bold;
+}
+
 
 #storyApp .welcome-scrn .group-wrp .oauth {
 }
@@ -374,3 +380,24 @@
   font-size: 1rem;
 }
 
+.signup-btn-wrp {
+  margin: 0 auto;
+  text-align: center;
+}
+#signUp {
+  margin-top: 100px;
+}
+.signup-btn-wrp .km-widget.km-button {
+  background: none !important;
+  width: 235px;
+  border: 1px solid #563000;
+  font-size: 18px;
+  font-weight: bold;
+  height: 44px;
+}
+.signup-btn-wrp.disabled .km-widget.km-button {
+  opacity: 0.3;
+}
+.k-invalid-msg {
+  color: red !important;
+}

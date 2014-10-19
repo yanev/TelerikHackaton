@@ -27,11 +27,11 @@ a {
 }
 
 /* line 17, ../sass/main.sass */
-#welcome {
+#welcome, #signup {
   background: #e5e1d7;
 }
 /* line 19, ../sass/main.sass */
-#welcome .km-content {
+#welcome .km-content, #signup .km-content {
   background: #e5e1d7 !important;
 }
 
